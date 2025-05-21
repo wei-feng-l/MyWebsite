@@ -1,0 +1,348 @@
+/* Base styles */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+header {
+  background: #007acc;
+  color: #fff;
+  padding: 1rem 0;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  padding: 0;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.container .logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 50%;
+}
+
+
+#about {
+  background: linear-gradient(to bottom, #FFF6E0, #FFD59E);
+  /* Soft beige to warm orange */
+  padding: 4rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #4b2e0e;
+  /* warm brown text */
+  position: relative;
+  overflow: hidden;
+  /* to contain the falling leaves */
+}
+
+.about-circle {
+  position: relative;
+  /* NOT absolute anymore so gap works */
+  z-index: 10;
+  width: min(90vw, 340px);
+  height: min(90vw, 340px);
+  border-radius: 50%;
+  background: radial-gradient(circle at center, #FFD59E, #FFB347);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  box-shadow: 0 10px 40px rgba(255, 165, 0, 0.3);
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+}
+
+/* This is the Text that will be hidden when the circle is hovered */
+.about-hidden {
+  position: absolute;
+  /* NOT absolute anymore so gap works */
+  z-index: 10;
+  width: min(90vw, 340px);
+  height: min(90vw, 340px);
+  border-radius: 50%;
+  background: rgba(102, 97, 97, 0.969);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  box-shadow: 0 10px 40px rgba(255, 165, 0, 0.3);
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+}
+
+/* CSS for circle to be remove when hovered */
+.about-hidden:hover {
+  opacity: 0;
+  width: min(95vw, 420px);
+  border-radius: 2rem;
+  transition: all 0.05s ease-in-out;
+}
+
+.about-circle:hover {
+  width: min(95vw, 420px);
+  height: auto;
+  border-radius: 2rem;
+  overflow: visible;
+}
+
+.about-text {
+  text-align: center;
+  font-size: clamp(0.7rem, 1.8vw, 1rem);
+  line-height: 1.6;
+  max-width: 90%;
+}
+
+.about-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  /* this keeps the gap between image and circle */
+  flex-wrap: wrap;
+  /* allows better responsiveness */
+  min-height: 400px;
+  padding: 2rem;
+}
+
+.about-image {
+  width: 400px;
+  max-width: 90vw;
+  border-radius: 1rem;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+  animation: fall 20s linear infinite;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-name: fall, sway;
+  animation-duration: 20s;
+}
+.about-filler{
+  color: #f1f1f1;
+}
+.about-text h2 {
+  color: #75200f;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  text-decoration: underline;
+  text-decoration-color: #c0965b;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  text-decoration-style: wavy;
+  text-decoration-skip-ink: auto;
+  text-decoration-skip: objects;
+}
+
+.about-text p {
+  color: #4c2c36;
+  font-size: 1rem;
+  line-height: 1.5;
+  justify-content: center;
+  text-align: center;
+
+}
+
+.about-text a {
+  color: #c71585;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* Fall animation */
+@keyframes fall {
+  0% {
+    top: -60px;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+/* Wind sway effect */
+@keyframes sway {
+
+  0%,
+  100% {
+    transform: translateX(0px) rotate(0deg);
+  }
+
+  25% {
+    transform: translateX(15px) rotate(5deg);
+  }
+
+  50% {
+    transform: translateX(-10px) rotate(-5deg);
+  }
+
+  75% {
+    transform: translateX(10px) rotate(3deg);
+  }
+}
+
+
+/* Common leaf styling */
+.leaf {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 0;
+  animation-name: fall, sway;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+/* 🍁 Leaf Variants with Different Colors and SVG Shapes */
+
+.leaf1 {
+  left: 10%;
+  animation-duration: 12s;
+  animation-delay: 0s;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><path fill='%23e28d26' d='M32 2C19 5 9 19 9 32s10 27 23 30c13-3 23-17 23-30S45 5 32 2z'/></svg>");
+}
+
+.leaf2 {
+  left: 25%;
+  animation-duration: 14s;
+  animation-delay: 6s;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><path fill='%23e28d26' d='M32 2C19 5 9 19 9 32s10 27 23 30c13-3 23-17 23-30S45 5 32 2z'/></svg>");
+}
+
+.leaf3 {
+  left: 40%;
+  animation-duration: 13s;
+  animation-delay: 1s;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><path fill='%23f6b73c' d='M32 4C17 7 8 20 8 33s11 26 24 25 24-17 24-30S47 1 32 4z'/></svg>");
+}
+
+.leaf4 {
+  left: 55%;
+  animation-duration: 15s;
+  animation-delay: 3s;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><path fill='%23de8722' d='M32 0C20 6 10 20 10 32s10 26 22 30 22-10 22-28S44 1 32 0z'/></svg>");
+}
+
+.leaf5 {
+  left: 70%;
+  animation-duration: 16s;
+  animation-delay: 1.5s;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><path fill='%23cc7722' d='M32 3C19 6 9 18 9 33s10 28 23 28 23-17 23-30S45 0 32 3z'/></svg>");
+}
+
+.leaf6 {
+  left: 85%;
+  animation-duration: 17s;
+  animation-delay: 0.5s;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><path fill='%23f8b400' d='M32 2C18 8 8 22 8 36s10 26 24 26 24-18 24-32S46 0 32 2z'/></svg>");
+}
+
+.leaf7 {
+  left: 95%;
+  animation-duration: 18s;
+  animation-delay: 2.5s;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><path fill='%23d2691e' d='M32 4C22 6 14 20 14 32s8 26 18 26 18-16 18-30S42 2 32 4z'/></svg>");
+}
+
+
+
+
+/* Responsive */
+@media (max-width: 480px) {
+  .about-wrapper {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .about-image {
+    margin: 0;
+    /* remove side margins on smaller screens */
+    width: 40%;
+    /* make image full width */
+    max-width: 90%;
+    /* ensure it doesn't exceed the screen width */
+
+  }
+
+  .about-circle {
+    width: 80vw;
+    /* make circle full width */
+    height: 80vw;
+    /* make circle full height */
+    padding: 0.8rem;
+    /* adjust padding for smaller screens */
+  }
+
+  .about-text {
+    font-size: clamp(0.65rem, 3.5vw, 1rem);
+  }
+}
+
+section {
+  padding: 4rem 0;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: #007acc;
+  text-decoration: none;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  background: #f1f1f1;
+  color: #555;
+}
+
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+}
