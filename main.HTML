@@ -14,30 +14,39 @@
 </head>
 
 <body>
-  <header>
+  <header class="header">
     <div class="container">
-      <h1>Lim Wei Feng</h1>
-      <nav>
-        <img src="Images/Logo.jpg" alt="Lim Wei Feng Logo" class="logo" />
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="works.HTML">Past Work</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#landing-page">Home</a></li>
-        </ul>
+      <div class="logo-img-container">
+        <img src="Images/Logo.jpg" alt="Lim Wei Feng Logo" class="logo-img" />
+      </div>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="works.HTML">Past Work</a>
+        <a href="#contact">Contact</a>
+        <a href="#landing-page" class="home-btn">Home</a>
       </nav>
     </div>
   </header>
 
-  <section>
-    <div class="landing-page">
-      <div class="landing-text">
-        <h1>Welcome to My Portfolio</h1>
-        <p>
-          I'm Lim Wei Feng, a Junior Software Engineer with a passion for web development and 3D modeling.
-          Explore my work and get to know me better!
-        </p>
-        <button class="button" onclick="window.location.href='#about'">Learn More</button>
+  <section class="landing-page">
+    <div class="container">
+      <div class="landing-page-text">
+        <h1>Hello, <br><span>I’m Wei Feng</span><br>A Fresh Grad</h1>
+        <p>Click here to find out more about me :)</p>
+        <a href="#about" class="btn">Discover More</a>
+
+        <div class="socials">
+          <span>Follow me:</span>
+          <a href="https://www.linkedin.com/in/wei-feng-lim-0861271a4" target="_blank"><img src="Images/Linkedin.svg"
+              alt="LinkedIn"></a>
+          <a href="https://www.instagram.com/_wflim_/" target="_blank"><img src="Images/Instagram.svg" alt="Instagram"></a>
+          <a href="https://facebook.com/WFLim00" target="_blank"><img src="Images/Facebook.svg" alt="Facebook"></a>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <div class="circle-bg"></div>
+        <img src="Images/CircleImage.png" alt="Wei Feng">
       </div>
     </div>
   </section>

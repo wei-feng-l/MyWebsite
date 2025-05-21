@@ -1,53 +1,137 @@
 /* Base styles */
-body {
-  font-family: 'Inter', sans-serif;
+* {
   margin: 0;
   padding: 0;
-  background: #ffffff;
-  color: #333;
-  line-height: 1.6;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 2rem;
-}
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom right, #fff5f5, #ffeaea);
+  }
 
-header {
-  background: #007acc;
-  color: #fff;
-  padding: 1rem 0;
-}
+  .header {
+    background: #fffcf5;
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
 
-header h1 {
-  margin: 0;
-  font-size: 2rem;
-}
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+  }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-  padding: 0;
-}
+  .logo-img-container {
+    display: flex;
+    align-items: center;
+  }
 
-nav a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-}
+  .logo-img {
+    width: 66px;
+    height: 66px;
+    border-radius: 50%;
+  }
 
-.container .logo {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  border-radius: 50%;
-}
+  .nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 1.1em;
+  }
 
+  .home-btn {
+    background: #ff9640;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+  }
+
+  .landing-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding: 80px 20px;
+    background: linear-gradient(to bottom right, #fffcf5, #fdc99f);
+  }
+
+  .landing-page .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 250px;
+  }
+
+  .landing-page-text {
+    max-width: 50%;
+    font-size: 1.5em;
+  }
+
+  .landing-page-text h1 {
+    font-size: 3.3em;
+    margin: 0 0 25px;
+  }
+
+  .landing-page-text span {
+    color: #ff6240;
+  }
+
+  .btn {
+    display: inline-block;
+    background: #ff9640;
+    color: white;
+    padding: 14px 22px;
+    border-radius: 6px;
+    margin-top: 18px;
+    font-weight: bold;
+    font-size: 1.1em;
+  }
+
+  .socials {
+    margin-top: 25px;
+    font-size: 1.1em;
+  }
+
+  .socials img {
+    width: 26px;
+    margin: 0 6px;
+  }
+
+  .hero-image {
+    position: relative;
+    width: 385px;
+    height: 385px;
+  }
+
+  .hero-image .circle-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    z-index: 0;
+  }
+
+  .hero-image img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    z-index: 1;
+  }
 
 #about {
-  background: linear-gradient(to bottom, #FFF6E0, #FFD59E);
+  background: linear-gradient(to bottom, #fff6e0, #ffd59e);
   /* Soft beige to warm orange */
   padding: 4rem 1rem;
   display: flex;
@@ -68,7 +152,7 @@ nav a {
   width: min(90vw, 340px);
   height: min(90vw, 340px);
   border-radius: 50%;
-  background: radial-gradient(circle at center, #FFD59E, #FFB347);
+  background: radial-gradient(circle at center, #ffd59e, #ffb347);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -148,7 +232,7 @@ nav a {
   animation-name: fall, sway;
   animation-duration: 20s;
 }
-.about-filler{
+.about-filler {
   color: #f1f1f1;
 }
 .about-text h2 {
@@ -175,7 +259,6 @@ nav a {
   line-height: 1.5;
   justify-content: center;
   text-align: center;
-
 }
 
 .about-text a {
@@ -196,7 +279,6 @@ nav a {
 
 /* Wind sway effect */
 @keyframes sway {
-
   0%,
   100% {
     transform: translateX(0px) rotate(0deg);
@@ -214,7 +296,6 @@ nav a {
     transform: translateX(10px) rotate(3deg);
   }
 }
-
 
 /* Common leaf styling */
 .leaf {
@@ -281,9 +362,6 @@ nav a {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><path fill='%23d2691e' d='M32 4C22 6 14 20 14 32s8 26 18 26 18-16 18-30S42 2 32 4z'/></svg>");
 }
 
-
-
-
 /* Responsive */
 @media (max-width: 480px) {
   .about-wrapper {
@@ -298,7 +376,6 @@ nav a {
     /* make image full width */
     max-width: 90%;
     /* ensure it doesn't exceed the screen width */
-
   }
 
   .about-circle {
