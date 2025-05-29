@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <script src="script.js" defer></script>
+  <script src="https://kit.fontawesome.com/745a5b48d2.js" crossorigin="anonymous"></script>
   <!-- Optional Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -26,10 +26,11 @@
         <a href="#contact">Contact</a>
         <a href="#landing-page" class="home-btn">Home</a>
       </nav>
+      
     </div>
   </header>
 
-  <section class="landing-page">
+  <section class="landing-page" id="landing-page">
     <div class="container">
       <div class="landing-page-text">
         <h1>Hello, <br><span>I’m Wei Feng</span><br>A Software Engineer/Developer</h1>
@@ -48,7 +49,7 @@
 
       <div class="hero-image">
         <div class="circle-bg"></div>
-        <img src="Images/CircleImage.png" alt="Wei Feng">
+        <div class="hero-image"></div>
       </div>
     </div>
   </section>
@@ -84,7 +85,7 @@
 
   <section id="skills">
     <div class="container-skills">
-      <h2>My Skills</h2>
+      <h2>Skillsets Knowledge</h2>
       <div class="skills-grid">
         <div class="skill-item">
           <img src="Images/html5.svg" alt="HTML5" class="skill-image" loading="lazy">
@@ -142,8 +143,34 @@
 
   <section id="contact">
     <div class="container">
-      <h2>Contact Me</h2>
-      <p>Email: <a href="mailto:your.email@example.com">Weifeng4f@gmail.com</a></p>
+      <div class="contact-row">
+        <div class="contact-info">
+          <h2>Contact Me</h2>
+          <p><i class="fa-solid fa-envelope-open-text"></i> Weifeng4f@gmail.com</p>
+          <p><i class="fa-solid fa-mobile"></i> +65 8317 7764</p>
+
+          <div class="social-icons">
+            <a href="https://www.linkedin.com/in/wei-feng-lim-0861271a4" target="_blank"><i
+                class="fa-brands fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/_wflim_/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://facebook.com/WFLim00" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://github.com/wei-feng-l?tab=repositories" target="_blank"><i
+                class="fa-brands fa-github"></i></a>
+          </div>
+
+          <a href="others/Resume_LimWeiFeng.pdf" class="resume-btn" download>Download Resume</a>
+        </div>
+
+        <div class="contact-form">
+          <form name="submit-to-google-sheet" id="contact-form">
+            <input type="text" id="name" name="name" placeholder="Name" required>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <textarea id="message" name="message" rows="4" placeholder="Message" required></textarea>
+            <button type="submit" class="btn-contact">Send Message</button>
+          </form>
+        </div>
+        <div id="form-alert" class="form-alert" style="display: none;"></div>
+      </div>
     </div>
   </section>
 
@@ -152,6 +179,35 @@
       <p>&copy; 2025 Lim Wei Feng</p>
     </div>
   </footer>
+  <script>
+    const scriptURL =
+      "https://script.google.com/macros/s/AKfycby5855aqTeuM-Ktip_PHxjvt2bBkAcy4tfWfD_vZNhPpm714TR846FnUJpP0mpSY0lh/exec";
+    const form = document.forms["submit-to-google-sheet"];
+    const alertBox = document.getElementById("form-alert");
+
+    function showAlert(message, success = true) {
+      alertBox.textContent = message;
+      alertBox.className = success ? "form-alert success" : "form-alert error";
+      alertBox.style.display = "block";
+      setTimeout(() => {
+        alertBox.style.display = "none";
+      }, 4000);
+    }
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      fetch(scriptURL, { method: "POST", body: new FormData(form) })
+
+        .then(() => {
+          showAlert("Message sent successfully! ✅", true);
+          form.reset();
+        })
+        .catch(() => {
+          showAlert("Failed to send message. ❌ Please try again later.", false);
+        });
+    });
+  </script>
+
 </body>
 
 </html>
