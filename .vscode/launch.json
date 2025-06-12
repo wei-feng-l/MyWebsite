@@ -15,7 +15,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Open main.HTML",
-            "file": "c:\\Users\\Wei Feng Lim\\OneDrive\\Desktop\\Portfolio\\main.HTML"
+            "file": "c:\\Users\\Wei Feng Lim\\OneDrive\\Desktop\\Portfolio\\Index.HTML"
         }
     ]
 }
