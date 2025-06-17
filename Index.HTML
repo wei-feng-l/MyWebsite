@@ -200,10 +200,12 @@
 
         .then(() => {
           showAlert("Message sent successfully! ✅", true);
+          console.log("Success!");
           form.reset();
         })
         .catch(() => {
           showAlert("Failed to send message. ❌ Please try again later.", false);
+          console.error("Error!", error.message);
         });
     });
   </script>

@@ -1,29 +1,147 @@
-.banner {
-  height: 100%;
-  width: 100vh;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #fff6e0, #fcd394);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.video-section {
+  background-color: #111;
+  padding: 4rem 1rem;
+  color: #fff;
+}
+
+.video-container {
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+.video-section h1 {
   text-align: center;
-  overflow: visible;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.video-section p {
+  text-align: center;
+  color: #ccc;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  font-size: 1rem;
+}
+
+.carousel-container {
   position: relative;
+  width: 100%;
+  overflow: hidden;
 }
 
-.banner .slider {
-  position: absolute;
-  width: 200px;
-  height: 250 px;
-  top: 10%;
-  left: calc(50% - 100px);
-  transform-style: preserve-3d;
-  transform: perspective(1000px);
+.carousel {
+  display: flex;
+  gap: 1rem;
+  transition: transform 0.3s ease-in-out;
+  scroll-snap-type: x mandatory;
+  overflow-x: auto;
+  padding: 1rem;
 }
 
-.banner .slider-img {
-  position: absolute;
-  inset: 0 0 0 0;
-  transform: translateZ(550px);
+.carousel::-webkit-scrollbar {
+  display: none;
 }
 
-.banner .slider-img img {
+.carousel-item {
+  flex: 0 0 80%;
+  max-width: 600px;
+  background: #222;
+  border-radius: 12px;
+  scroll-snap-align: center;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s;
+  text-align: center;
+  cursor: pointer;
+}
+
+.carousel-item video {
+  width: 100%;
+  border-radius: 10px;
+  pointer-events: none;
+}
+
+.carousel-item h3 {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.nav-buttons button {
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  background: #444;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.nav-buttons button:hover {
+  background: #666;
+}
+
+@media (max-width: 768px) {
+  .carousel-item {
+    flex: 0 0 95%;
+  }
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.modal-content video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
 }
