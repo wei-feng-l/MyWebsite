@@ -12,6 +12,7 @@
     <script src="https://kit.fontawesome.com/745a5b48d2.js" crossorigin="anonymous"></script>
     <!-- Optional Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -31,22 +32,56 @@
     </header>
     <section class="banner-section">
         <div class="banner">
-            <div class="slider">
-                <div class="slider-img"><img src="Images/App Icon.jpg" alt="Revemp Spotify Icon">
+            <div class="slider" style="--quantity: 7">
+                <div class="item" style="--position: 1"><img src="Images/App Icon.png" alt="App Icon">Revemp Spotify
+                    Icon
                 </div>
-                <div class="slider-img"><img src="Images/splash screen.jpg" alt="Spotify Splash Screen"></div>
-                <div class="slider-img"><img src="Images/Logo.jpg" alt="Page Logo"></div>
-                <div class="slider-img"><img src="Images/My Logo.jpg" alt="Logo Design"></div>
-                <div class="slider-img"><img src="Images/StormTrouper helmet.jpg" alt="StormTrooper Helmet"></div>
-                <div class="slider-img"><img src="Images/Sushi Cards.jpg" alt="Sushi Cards"></div>
-                <div class="slider-img"><img src="Images/asg2_JPG.jpg" alt="Project 6"></div>
+                <div class="item" style="--position: 2"><img src="Images/splash screen.jpg" alt="App Icon">Revemp Splash
+                    Screen</div>
+                <div class="item" style="--position: 3"><img src="Images/Logo.jpg" alt="App Icon">Website Logo</div>
+                <div class="item" style="--position: 4"><img src="Images/My Logo.jpg" alt="App Icon">Personal Logo</div>
+                <div class="item" style="--position: 5"><img src="Images/StormTrouper helmet.jpg" alt="App Icon">Styled
+                    StormTrouper Helemt</div>
+                <div class="item" style="--position: 6"><img src="Images/Sushi Cards.jpg" alt="App Icon">Sushi Card Game
+                    Design</div>
+                <div class="item" style="--position: 7"><img src="Images/asg2_JPG.jpg" alt="App Icon">Ice Cream Truck
+                    with
+                    Camping Background</div>
+            </div>
+            <div class="content">
+                <h1 data-content="Designs">Designs</h1>
             </div>
         </div>
-        <h1>2D Images</h1>
-        <p>Here are some of the projects I have worked on. Click on the project to view more details.</p>
-
+        </div>
     </section>
 
+    <section id="video-showcase" class="video-section">
+        <div class="video-container">
+            <h1 style="text-align:center; padding-top: 1rem;">Video Showcase</h1>
+
+            <div class="carousel-container">
+                <div class="carousel" id="carousel">
+                    <div class="carousel-item">
+                        <video src="videos/DDA & ITD Assignment 2 - VR Beat Saber Game.mp4" muted autoplay loop playsinline></video>
+                        <h3>VR Beat Saber Game</h3>
+                    </div>
+                    <div class="carousel-item">
+                        <video src="videos/ITD Assg2 ProjectName Video Trim.mp4" muted autoplay loop playsinline></video>
+                        <h3>Game Level Design</h3>
+                    </div>
+                    <div class="carousel-item">
+                        <video src="videos/game3.mp4" muted autoplay loop playsinline></video>
+                        <h3>Racing Rush</h3>
+                    </div>
+                </div>
+
+                <div class="nav-buttons">
+                    <button onclick="scrollCarousel(-1)">&#8592; Prev</button>
+                    <button onclick="scrollCarousel(1)">Next &#8594;</button>
+                </div>
+            </div>
+        </div>
+    </section>
     <script type="module" src="script.js"></script>
 
 </body>

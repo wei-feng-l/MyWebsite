@@ -1,16 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="test.css">
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <div class="banner">
-        <div class="slider">
-            <div class="item"><img src="Images/App Icon.jpg" alt="App Icon"></div>
+    <section>
+        <div class="banner">
+            <div class="slider" style="--quantity: 7">
+                <div class="item" style="--position: 1"><img src="Images/App Icon.png" alt="App Icon">Revemp Spotify
+                    Icon
+                </div>
+                <div class="item" style="--position: 2"><img src="Images/splash screen.jpg" alt="App Icon">Revemp Splash
+                    Screen</div>
+                <div class="item" style="--position: 3"><img src="Images/Logo.jpg" alt="App Icon">Website Logo</div>
+                <div class="item" style="--position: 4"><img src="Images/My Logo.jpg" alt="App Icon">Personal Logo</div>
+                <div class="item" style="--position: 5"><img src="Images/StormTrouper helmet.jpg" alt="App Icon">Styled
+                    StormTrouper Helemt</div>
+                <div class="item" style="--position: 6"><img src="Images/Sushi Cards.jpg" alt="App Icon">Sushi Card Game
+                    Design</div>
+                <div class="item" style="--position: 7"><img src="Images/asg2_JPG.jpg" alt="App Icon">Ice Cream Truck
+                    with
+                    Camping Background</div>
+            </div>
+            <div class="content">
+                <h1 data-content="Designs">Designs</h1>
+            </div>
         </div>
-    </div>
+        </div>
+    </section>
+
+    <section id="video-showcase" class="video-section">
+        <div class="video-container">
+            <h1 style="text-align:center; padding-top: 1rem;">Video Showcase</h1>
+
+            <div class="carousel-container">
+                <div class="carousel" id="carousel">
+                    <div class="carousel-item">
+                        <video src="videos/DDA & ITD Assignment 2 - VR Beat Saber Game.mp4" muted autoplay loop
+                            playsinline></video>
+                        <h3>VR Beat Saber Game</h3>
+                    </div>
+                    <div class="carousel-item">
+                        <video src="videos/ITD Assg2 ProjectName Video Trim.mp4" muted autoplay loop
+                            playsinline></video>
+                        <h3>Game Level Design</h3>
+                    </div>
+                    <div class="carousel-item">
+                        <video src="videos/game3.mp4" muted autoplay loop playsinline></video>
+                        <h3>Racing Rush</h3>
+                    </div>
+                </div>
+
+                <div class="nav-buttons">
+                    <button onclick="scrollCarousel(-1)">&#8592; Prev</button>
+                    <button onclick="scrollCarousel(1)">Next &#8594;</button>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
+
 </html>
