@@ -57,33 +57,78 @@
 
     <section id="video-showcase" class="video-section">
         <div class="video-container">
-            <h1 style="text-align:center; padding-top: 1rem;">Video Showcase</h1>
+            <h1>Video Showcase</h1>
+            <p>
+                Here are some of the games I've developed, demonstrated through short
+                video clips. Each project showcases different aspects of my skills in
+                game design, mechanics programming, and visual polish.
+            </p>
 
             <div class="carousel-container">
                 <div class="carousel" id="carousel">
-                    <div class="carousel-item">
-                        <video src="videos/DDA & ITD Assignment 2 - VR Beat Saber Game.mp4" muted autoplay loop playsinline></video>
-                        <h3>VR Beat Saber Game</h3>
+                    <div class="carousel-item"
+                        onclick="openModal('videos/DDA & ITD Assignment 2 - VR Beat Saber Game.mp4')">
+                        <video src="videos/DDA & ITD Assignment 2 - VR Beat Saber Game.mp4" muted loop
+                            playsinline></video>
+                        <h3>VR Beat The Virus</h3>
                     </div>
-                    <div class="carousel-item">
-                        <video src="videos/ITD Assg2 ProjectName Video Trim.mp4" muted autoplay loop playsinline></video>
-                        <h3>Game Level Design</h3>
+                    <div class="carousel-item"
+                        onclick="openModal('videos/Integrated Project (DDA) Database Walkthrough.mp4')">
+                        <video src="videos/Integrated Project (DDA) Database Walkthrough.mp4" muted loop
+                            playsinline></video>
+                        <h3>VR Tower Defence Game Database</h3>
                     </div>
-                    <div class="carousel-item">
-                        <video src="videos/game3.mp4" muted autoplay loop playsinline></video>
-                        <h3>Racing Rush</h3>
+                    <div class="carousel-item"
+                        onclick="openModal('videos/Integrated Project (ITD) Gameplay Walkthrough.mp4')">
+                        <video src="videos/Integrated Project (ITD) Gameplay Walkthrough.mp4" muted loop
+                            playsinline></video>
+                        <h3>VR Tower Defence Gameplay</h3>
+                    </div>
+                    <div class="carousel-item" onclick="openModal('videos/Quested Dungeon Escape.mp4')">
+                        <video src="videos/Quested Dungeon Escape.mp4" muted loop playsinline></video>
+                        <h3>Mini Dungeon Escape Level</h3>
+                    </div>
+                    <div class="carousel-item" onclick="openModal('videos/Sci-Fic Tunnel.mp4')">
+                        <video src="videos/Sci-Fic Tunnel.mp4" muted loop playsinline></video>
+                        <h3>Sci-Fic Tunnel</h3>
+                    </div>
+                    <div class="carousel-item" onclick="openModal('videos/throne Game Design.mp4')">
+                        <video src="videos/Throne Game Design.mp4" muted loop playsinline></video>
+                        <h3>Throne Room Level Design</h3>
+                    </div>
+                    <div class="carousel-item" onclick="openModal('videos/Motion Graphic Design.MP4')">
+                        <video src="videos/Motion Graphic Design.MP4" muted loop playsinline></video>
+                        <h3>Motion Graphic Design</h3>
+                    </div>
+                    <div class="carousel-item" onclick="openModal('videos/Telegram Share.mp4')">
+                        <video src="videos/Telegram Share.mp4" muted loop playsinline></video>
+                        <h3>Telegram Heart</h3>
+                    </div>
+                    <div class="carousel-item" onclick="openModal('videos/Instagram Heart.mp4')">
+                        <video src="videos/Instagram Heart.mp4" muted loop playsinline></video>
+                        <h3>2D Platformer Game</h3>
                     </div>
                 </div>
 
                 <div class="nav-buttons">
-                    <button onclick="scrollCarousel(-1)">&#8592; Prev</button>
-                    <button onclick="scrollCarousel(1)">Next &#8594;</button>
+                    <button onclick="scrollCarousel(-0.5)">&#8592; Prev</button>
+                    <button onclick="scrollCarousel(0.5)">Next &#8594;</button>
                 </div>
             </div>
         </div>
     </section>
-    <script type="module" src="script.js"></script>
 
+    <!-- Modal Popup -->
+    <div id="videoModal" class="modal" onclick="handleModalClick(event)">
+        <div class="modal-content-wrapper">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="modal-content">
+                <video id="modalVideo" controls></video>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
 </body>
 
 </html>
