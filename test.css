@@ -1,3 +1,16 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #111;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
 .banner {
   width: 100%;
   height: 100vh;
@@ -15,7 +28,6 @@
   transform-style: preserve-3d;
   transform: perspective(5000px);
   animation: autoRun 40s linear infinite;
-
 }
 
 .banner .slider .item {
@@ -26,7 +38,7 @@
     )
     translateZ(550px);
   font-family: "DynaPuff", system-ui;
-  }
+}
 
 @keyframes autoRun {
   from {
@@ -43,7 +55,7 @@
   object-fit: fill;
 }
 
-.banner .content{
+.banner .content {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -54,18 +66,18 @@
   align-items: center;
 }
 
-.banner .content h1{
+.banner .content h1 {
+  transform: translateY(50%);
   font-size: 10em;
   line-height: 0.5em;
   color: #000000;
- -webkit-text-stroke: 1px #ff0000;
+  -webkit-text-stroke: 1.5px #ff0000;
   color: transparent;
 }
 
-.banner .content .text{
+.banner .content .text {
   text-align: right;
   max-width: 150px;
-
 }
 
 @media (max-width: 800px) {
@@ -73,7 +85,7 @@
     font-size: 6em;
   }
 
-  .banner .slider{
+  .banner .slider {
     width: 180px;
     height: 180pxpx;
     top: 35%;
@@ -82,123 +94,153 @@
   }
 
   .banner .slider .item {
+    position: absolute;
+    inset: 0 0 0 0;
+    transform: rotateY(
+        calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
+      )
+      translateZ(320px);
+    font-family: "DynaPuff", system-ui;
+  }
+
+  @keyframes autoRun {
+    from {
+      transform: perspective(2000px) rotateX(-8deg) rotateY(0deg);
+    }
+    to {
+      transform: perspective(2000px) rotateX(-8deg) rotateY(360deg);
+    }
+  }
+}
+
+.video-section {
+  background-color: #111;
+  padding: 4rem 1rem;
+  color: #fff;
+}
+
+.video-container {
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+.video-section h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.video-section p {
+  text-align: center;
+  color: #ccc;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  font-size: 1rem;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  gap: 1rem;
+  transition: transform 0.3s ease-in-out;
+  scroll-snap-type: x mandatory;
+  overflow-x: auto;
+  padding: 1rem;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-item {
+  flex: 0 0 80%;
+  max-width: 600px;
+  background: #222;
+  border-radius: 12px;
+  scroll-snap-align: center;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s;
+  text-align: center;
+  cursor: pointer;
+}
+
+.carousel-item video {
+  width: 100%;
+  border-radius: 10px;
+  pointer-events: none;
+}
+
+.carousel-item h3 {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.nav-buttons button {
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  background: #444;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.nav-buttons button:hover {
+  background: #666;
+}
+
+@media (max-width: 768px) {
+  .carousel-item {
+    flex: 0 0 95%;
+  }
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.modal-content video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.close {
   position: absolute;
-  inset: 0 0 0 0;
-  transform: rotateY(
-      calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
-    )
-    translateZ(320px);
-  font-family: "DynaPuff", system-ui;
-  }
-
-@keyframes autoRun {
-  from {
-    transform: perspective(2000px) rotateX(-8deg) rotateY(0deg);
-  }
-  to {
-    transform: perspective(2000px) rotateX(-8deg) rotateY(360deg);
-  }
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
 }
-}
-
- * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      background-color: #111;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      overflow-x: hidden;
-    }
-
-    .video-section {
-      background-color: #111;
-      padding: 4rem 1rem;
-      color: #fff;
-    }
-
-    .video-container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .video-section h1 {
-      text-align: center;
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .video-section p {
-      text-align: center;
-      color: #ccc;
-      max-width: 800px;
-      margin: 0 auto 2rem;
-      font-size: 1rem;
-    }
-
-    .carousel-container {
-      position: relative;
-      width: 100%;
-      overflow: hidden;
-    }
-
-    .carousel {
-      display: flex;
-      gap: 1rem;
-      transition: transform 0.3s ease-in-out;
-      scroll-snap-type: x mandatory;
-      overflow-x: auto;
-      padding: 1rem;
-    }
-
-    .carousel::-webkit-scrollbar {
-      display: none;
-    }
-
-    .carousel-item {
-      flex: 0 0 80%;
-      max-width: 600px;
-      background: #222;
-      border-radius: 12px;
-      scroll-snap-align: center;
-      padding: 1rem;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-      transition: transform 0.3s;
-      text-align: center;
-    }
-
-    .carousel-item video {
-      width: 100%;
-      border-radius: 10px;
-    }
-
-    .carousel-item h3 {
-      margin-top: 1rem;
-      font-size: 1.25rem;
-    }
-
-    .nav-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-
-    .nav-buttons button {
-      padding: 0.5rem 1.5rem;
-      font-size: 1rem;
-      border: none;
-      background: #444;
-      color: #fff;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    .nav-buttons button:hover {
-      background: #666;
-    }
-
