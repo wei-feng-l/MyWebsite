@@ -677,7 +677,7 @@ form textarea {
   margin: 0 auto;
 }
 
-.video-section h1 {
+.video-section h1, .threejs-section h1 {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 1rem;
@@ -1055,4 +1055,13 @@ footer {
       flex: 0 0 95%;
     }
   }
+}
+
+
+
+/* Container for Three.js renderer */
+#three-container {
+    width: 100%;
+    height: 500px; /* adjust for your layout */
+    position: relative;
 }

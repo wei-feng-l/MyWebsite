@@ -2,39 +2,52 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="test.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lim Wei Feng | Projects</title>
+
+    <link rel="stylesheet" href="test.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://kit.fontawesome.com/745a5b48d2.js" crossorigin="anonymous"></script>
+    <!-- Optional Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <section>
+    <header class="header">
+        <div class="container">
+            <div class="logo-img-container">
+                <img src="Images/Logo.jpg" alt="Lim Wei Feng Logo" class="logo-img" />
+            </div>
+            <nav class="nav">
+                <a href="Index.HTML#about">About</a>
+                <a href="works.HTML" class="project-btn">Past Work</a>
+                <a href="Index.HTML#contact">Contact</a>
+                <a href="Index.HTML">Home</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="banner-section">
         <div class="banner">
             <div class="slider" style="--quantity: 7">
-                <div class="item" style="--position: 1"><img src="Images/App Icon.png" alt="App Icon">Revemp Spotify
-                    Icon
-                </div>
-                <div class="item" style="--position: 2"><img src="Images/splash screen.jpg" alt="App Icon">Revemp Splash
-                    Screen</div>
+                <div class="item" style="--position: 1"><img src="Images/App Icon.png" alt="App Icon">Revemp Spotify Icon</div>
+                <div class="item" style="--position: 2"><img src="Images/splash screen.jpg" alt="App Icon">Revemp Splash Screen</div>
                 <div class="item" style="--position: 3"><img src="Images/Logo.jpg" alt="App Icon">Website Logo</div>
                 <div class="item" style="--position: 4"><img src="Images/My Logo.jpg" alt="App Icon">Personal Logo</div>
-                <div class="item" style="--position: 5"><img src="Images/StormTrouper helmet.jpg" alt="App Icon">Styled
-                    StormTrouper Helemt</div>
-                <div class="item" style="--position: 6"><img src="Images/Sushi Cards.jpg" alt="App Icon">Sushi Card Game
-                    Design</div>
-                <div class="item" style="--position: 7"><img src="Images/asg2_JPG.jpg" alt="App Icon">Ice Cream Truck
-                    with
-                    Camping Background</div>
+                <div class="item" style="--position: 5"><img src="Images/StormTrouper helmet.jpg" alt="App Icon">Styled StormTrouper Helmet</div>
+                <div class="item" style="--position: 6"><img src="Images/Sushi Cards.jpg" alt="App Icon">Sushi Card Game Design</div>
+                <div class="item" style="--position: 7"><img src="Images/asg2_JPG.jpg" alt="App Icon">Ice Cream Truck with Camping Background</div>
             </div>
             <div class="content">
                 <h1 data-content="Designs">Designs</h1>
             </div>
         </div>
-        </div>
     </section>
 
+    <!-- Video Showcase -->
     <section id="video-showcase" class="video-section">
         <div class="video-container">
             <h1>Video Showcase</h1>
@@ -43,72 +56,83 @@
                 video clips. Each project showcases different aspects of my skills in
                 game design, mechanics programming, and visual polish.
             </p>
-
             <div class="carousel-container">
                 <div class="carousel" id="carousel">
-                    <div class="carousel-item"
-                        onclick="openModal('videos/DDA & ITD Assignment 2 - VR Beat Saber Game.mp4')">
+                    <div class="carousel-item" data-video="videos/DDA & ITD Assignment 2 - VR Beat Saber Game.mp4">
                         <video src="videos/DDA & ITD Assignment 2 - VR Beat Saber Game.mp4" muted loop
                             playsinline></video>
                         <h3>VR Beat The Virus</h3>
                     </div>
-                    <div class="carousel-item"
-                        onclick="openModal('videos/Integrated Project (DDA) Database Walkthrough.mp4')">
+
+                    <div class="carousel-item" data-video="videos/Integrated Project (DDA) Database Walkthrough.mp4">
                         <video src="videos/Integrated Project (DDA) Database Walkthrough.mp4" muted loop
                             playsinline></video>
                         <h3>VR Tower Defence Game Database</h3>
                     </div>
-                    <div class="carousel-item"
-                        onclick="openModal('videos/Integrated Project (ITD) Gameplay Walkthrough.mp4')">
+
+                    <div class="carousel-item" data-video="videos/Integrated Project (ITD) Gameplay Walkthrough.mp4">
                         <video src="videos/Integrated Project (ITD) Gameplay Walkthrough.mp4" muted loop
                             playsinline></video>
                         <h3>VR Tower Defence Gameplay</h3>
                     </div>
-                    <div class="carousel-item" onclick="openModal('videos/Quested Dungeon Escape.mp4')">
+
+                    <div class="carousel-item" data-video="videos/Quested Dungeon Escape.mp4">
                         <video src="videos/Quested Dungeon Escape.mp4" muted loop playsinline></video>
                         <h3>Mini Dungeon Escape Level</h3>
                     </div>
-                    <div class="carousel-item" onclick="openModal('videos/Sci-Fic Tunnel.mp4')">
+
+                    <div class="carousel-item" data-video="videos/Sci-Fic Tunnel.mp4">
                         <video src="videos/Sci-Fic Tunnel.mp4" muted loop playsinline></video>
                         <h3>Sci-Fic Tunnel</h3>
                     </div>
-                    <div class="carousel-item" onclick="openModal('videos/throne Game Design.mp4')">
+
+                    <div class="carousel-item" data-video="videos/Throne Game Design.mp4">
                         <video src="videos/Throne Game Design.mp4" muted loop playsinline></video>
                         <h3>Throne Room Level Design</h3>
                     </div>
-                    <div class="carousel-item" onclick="openModal('videos/Motion Graphic Design.MP4')">
+
+                    <div class="carousel-item" data-video="videos/Motion Graphic Design.MP4">
                         <video src="videos/Motion Graphic Design.MP4" muted loop playsinline></video>
                         <h3>Motion Graphic Design</h3>
                     </div>
-                    <div class="carousel-item" onclick="openModal('videos/Telegram Share.mp4')">
+
+                    <div class="carousel-item" data-video="videos/Telegram Share.mp4">
                         <video src="videos/Telegram Share.mp4" muted loop playsinline></video>
                         <h3>Telegram Heart</h3>
                     </div>
-                    <div class="carousel-item" onclick="openModal('videos/Instagram Heart.mp4')">
+
+                    <div class="carousel-item" data-video="videos/Instagram Heart.mp4">
                         <video src="videos/Instagram Heart.mp4" muted loop playsinline></video>
                         <h3>2D Platformer Game</h3>
                     </div>
                 </div>
-
                 <div class="nav-buttons">
-                    <button onclick="scrollCarousel(-0.5)">&#8592; Prev</button>
-                    <button onclick="scrollCarousel(0.5)">Next &#8594;</button>
+                    <button id="prevBtn">&#8592; Prev</button>
+                    <button id="nextBtn">Next &#8594;</button>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Modal Popup -->
-    <div id="videoModal" class="modal" onclick="handleModalClick(event)">
+    <div id="videoModal" class="modal">
         <div class="modal-content-wrapper">
-            <span class="close" onclick="closeModal()">&times;</span>
+            <span class="close">&times;</span>
             <div class="modal-content">
                 <video id="modalVideo" controls></video>
             </div>
         </div>
     </div>
 
-    <script type="module" src="script.js"></script>
+    <!-- Three.js Section -->
+    <section id="threejs-section" class="threejs-section">
+        <h1>3D Model</h1>
+        <div id="three-container"></div>
+    </section>
+
+    <!-- Scripts -->
+    <script type="module" src="js/ui.js" defer></script>
+    <script type="module" src="js/three.js"></script>
 </body>
 
 </html>
